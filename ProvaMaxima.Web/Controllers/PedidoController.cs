@@ -30,7 +30,10 @@ namespace ProvaMaxima.Web.Controllers
         [HttpGet("ObtenhaCodigoPedido")]
         public int ObtenhaCodigoPedido()
         {
-            var listaDeTotal = _repositorio.ObtenhaTodos() ?? new List<Pedido>();
+            var listaDeTotal = _repositorio.ObtenhaTodos();
+
+            if (listaDeTotal == null || listaDeTotal.Count() == 0)
+                return 1;
 
             return listaDeTotal.Max(x=> x.Codigo) +1;
         }

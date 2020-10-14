@@ -52,14 +52,14 @@ namespace ProvaMaxima.Repositorio.Contexto
                     Codigo= "8689",
                     Nome="Fardo 6UN Coca-Cola 600ml",
                     PrecoUnitario=(decimal)17.34,
-                    ImagemUrl="http://localhost:4200/assets/icones/foto-coca-cola.png"
+                    ImagemUrl="foto-coca-cola.png"
                 },
                 new Produto()
                 {
                     Codigo= "8254",
                     Nome="Fardo 6UN Fanta 600ml",
                     PrecoUnitario=(decimal)16.64,
-                    ImagemUrl="http://localhost:4200/assets/icones/foto-fanta.png"
+                    ImagemUrl="foto-fanta.png"
                 },
             });
 

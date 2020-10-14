@@ -29,10 +29,6 @@
     <None Remove="ClientApp\src\app\Login\login.component.ts" />
     <None Remove="ClientApp\src\app\pedido\cadastro\cadastro.pedido.component.ts" />
     <None Remove="ClientApp\src\app\pedido\pedido.component.ts" />
-    <None Remove="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
-    <None Remove="ClientApp\src\app\produto\produto.component.css" />
-    <None Remove="ClientApp\src\app\produto\produto.component.html" />
-    <None Remove="ClientApp\src\app\produto\produto.component.ts" />
     <None Remove="ClientApp\src\app\_modelos\cliente.ts" />
     <None Remove="ClientApp\src\app\_modelos\itemPedido.ts" />
     <None Remove="ClientApp\src\app\_modelos\pedido.ts" />
@@ -56,14 +52,6 @@
       <SubType>Code</SubType>
     </TypeScriptCompile>
     <TypeScriptCompile Include="ClientApp\src\app\pedido\pedido.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\produto\pesquisa\pesquisa.produto.component.ts" />
-    <TypeScriptCompile Include="ClientApp\src\app\produto\produto.component.css">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\produto\produto.component.html">
-      <SubType>Code</SubType>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="ClientApp\src\app\produto\produto.component.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\_modelos\itemPedido.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

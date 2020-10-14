@@ -8,11 +8,9 @@ import { MatAutocompleteModule, MatInputModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { ProdutoComponent } from './produto/produto.component';
 import { LoginComponent } from './login/login.component';
 import { PedidoComponent } from './pedido/pedido.component';
 import { CadastroPedidoComponent } from './pedido/cadastro/cadastro.pedido.component';
-import { PesquisaProdutoComponent } from './produto/pesquisa/pesquisa.produto.component';
 
 import { GuardaRotas } from './autorizacao/guarda.rotas';
 
@@ -26,11 +24,9 @@ import { ClienteServico } from './_servicos/cliente/cliente.servico';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    ProdutoComponent,
     LoginComponent,
     PedidoComponent,
-    CadastroPedidoComponent,
-    PesquisaProdutoComponent
+    CadastroPedidoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,10 +39,8 @@ import { ClienteServico } from './_servicos/cliente/cliente.servico';
         path: '', canActivate: [GuardaRotas], children:
           [
             { path: '', component: HomeComponent, pathMatch: 'full' },
-            { path: 'produto', component: ProdutoComponent },
             { path: 'pedido', component: PedidoComponent },
-            { path: 'cadastro-pedido', component: CadastroPedidoComponent },
-            { path: 'pesquisa-produto', component: PesquisaProdutoComponent}
+            { path: 'cadastro-pedido', component: CadastroPedidoComponent }
           ]
       },
       { path: 'login', component: LoginComponent }
