@@ -1,0 +1,17 @@
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 1px solid #ced4da;   
+  outline: 0;
+}
+
+.tituloImg {
+  display: -webkit-box;
+}
+
+.tituloImg > img {
+  width: 17px;
+}
+
+.card-title {
+  padding-left: 11px;
+}

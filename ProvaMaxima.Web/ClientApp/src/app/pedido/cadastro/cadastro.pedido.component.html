@@ -1,0 +1,93 @@
+<div class="d-lg-inline m-2">
+  <h3>Novo Pedido #{{this.pedido.codigo}}</h3>
+</div>
+
+<div class="shadow card m-2 rounded">
+  <div class="card-body">
+    <div class="tituloImg">
+      <img src="../../../assets/icones/icone-cliente.png">
+      <h5 class="card-title">Cliente</h5>
+    </div>
+    <input list="listaEstaticaDeCliente"
+           type="search" class="form-control mb-2 ng-untouched ng-pristine w-50"
+           placeholder="Informe um cliente"
+           spellcheck="true" role="combobox" aria-autocomplete="list"
+           aria-expanded="false" (ngModelChange)="filtroCliente()" (change)="selecaoDeCliente($event.target.value)" [(ngModel)]="codigoAtualCliente" />
+    <datalist id="listaEstaticaDeCliente">
+      <option *ngFor="let cliente of listaDeClientes">{{cliente.codigo}} - {{cliente.nome}}</option>
+    </datalist>
+  </div>
+</div>
+
+<div class="shadow card m-2 rounded">
+  <div class="card-body">
+    <div class="tituloImg">
+      <img src="../../../assets/icones/icone-carrinho.png">
+      <h5 class="card-title">Carrinho</h5>
+    </div>
+    <input list="listaEstaticaDeProdutos"
+           type="search" class="form-control mb-2 ng-untouched ng-pristine w-50"
+           placeholder="Informe um produto" role="combobox" aria-autocomplete="list" (ngModelChange)="filtroProduto()" (change)="selecaoDeProduto($event.target.value)" [(ngModel)]="codigoAtual" />
+    <datalist id="listaEstaticaDeProdutos">
+      <option *ngFor="let produto of listaDeProdutos">{{produto.codigo}} - {{produto.nome}}</option>
+    </datalist>
+    <div class="d-flex align-items-center flex-column" *ngIf="!listaDeItensDePedido">
+      <img src="../../assets/icones/imagem-carrinho-empty-state.png" alt="">
+      <h1 class="ml-5 text-muted">Carrinho vazio</h1>
+      <h5 class="ml-5 text-muted">Nenhum produto adicionado</h5>
+    </div>
+    <div *ngIf="listaDeItensDePedido">
+      <table class="table table-image">
+        <tbody>
+          <tr *ngFor="let item of listaDeItensDePedido">
+            <td class="w-25">
+              <div class="d-flex  justify-content-between">
+                <img src="../../../assets/icones/{{item.produto.imagemUrl}}" class="rounded-circle" style="width: 120px; height: 120px;">
+                {{item.produto.codigo}}
+              </div>
+            </td>
+            <td>{{item.produto.nome}}</td>
+            <td><input style=" width: 63px;" type="number" class="form-control" (change)="atualizeFreteETotal()" [(ngModel)]="item.quantidade" min="1"> </td>
+            <td>X {{item.produto.precoUnitario |currency:"R$ "}}</td>
+            <td>{{(item.quantidade * item.produto.precoUnitario) |currency:"R$ "}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="shadow card m-2 rounded">
+  <div class="card-body">
+    <div class="tituloImg">
+      <img src="../../../assets/icones/icone-total.png">
+      <h5 class="card-title">Carrinho</h5>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="w-50">
+          <div class="col" style="display:flex ">
+            <p class="text-left" style="flex: 1 ">Itens</p>
+            <p class="text-right">{{valorItens | currency:"R$ "}}</p>
+          </div>
+          <div class="col" style="display:flex ">
+            <p class="text-left" style="flex: 1 ">Frete</p>
+            <p class="text-right">{{valorFrete | currency:"R$ "}}</p>
+          </div>
+          <div class="col dropdown-divider">col</div>
+          <div class="col" style="display:flex ">
+            <p class="text-left" style="flex: 1 ">Total</p>
+            <p class="text-right">{{(valorItens + valorFrete) | currency:"R$ "}}</p>
+          </div>
+        </div>
+
+        <div class="w-50">
+          <div class="col"><button type="button" (click)="cadastrePedido()" class="btn btn-success btn-lg btn-block">Finalizar pedido</button></div>
+          <div class="col mb-2"></div>
+          <div class="col"><button type="button" (click)="limpeCarrinho()" class="btn btn-light btn-lg btn-block">Limpar carrinho</button></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
