@@ -73,3 +73,30 @@ Foram selecionados 2 itens do Produto A e 1 item do Produto B, logo teremos 3 it
 
 ## Dúvidas
 Entre em contato com talentoshumanos@maximatech.com.br
+
+## Instação do sistema
+1. Baixe o arquivo 'ProvaMaximaPublicacao.zip', que se encontra na raiz do projeto e a extraia para o C:\.
+![Preview](https://i.ibb.co/9pBJqfT/publicacao.png)
+2. Os sistema precisará do IIS(Internet Information Services ) para publicarmos o site local.
+	* Primeiro vá em 'Painel de Controle'
+	* Procure por 'Programas e Recursos' e clique na opção 'Ativar ou desativar recursos do Windows'
+	![Preview](https://i.ibb.co/b2gYKqR/painel-Controle.png)
+	* Após clicar nessa opção, na tela que abrir, vá até a opção 'Serviços de Informações da Internet', clique e ative essa opção e dê OK.
+	![Preview](https://i.ibb.co/CQ7sXrj/Servico-IIS.png)
+3. Depois que ativarmos o IIS do windows, vamos agora baixar o .NET Core Runtime 2.2.0:
+* Se sua máquina for 64x, clique no link abaixo (Observação: o link abaixo está no site, o coloquei aqui para facilitar): "https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-2.2.0-windows-x64-installer"
+* Se sua máquina for 86x, clique no link abaixo (Observação: o link abaixo está no site, o coloquei aqui para facilitar):
+"https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-aspnetcore-2.2.0-windows-x86-installer"
+
+4. Agora, a última dependência. O mongoDB server (Observação: o link abaixo está no site, o coloquei aqui para facilitar):
+'https://downloads.mongodb.com/win32/mongodb-win32-x86_64-enterprise-windows-64-4.0.21-rc0-signed.msi'
+
+5. Depois de instalar o runtime, entre no IIS(Internet Information Services ):
+* Vá sobre  a pasta 'Site', botão direito 'Adicionar Site...'
+* Na tela que abrirá, configure o nome, escolha a pasta que descompaquitamos na unidade 'C:\ProvaMaximaPublicacao'
+* Defina uma porta que não esteja sendo usada por outra aplicação, no meu caso foi a 8200'
+![Preview](https://i.ibb.co/rmTdh0s/COnf.png)
+* Após a publicação:
+![Preview](https://i.ibb.co/MRsNZjF/Site-Criado.png)
+6. Acessando o site já publicado:
+* Agora é só acessar o site publicado: 'localhost:8200'
